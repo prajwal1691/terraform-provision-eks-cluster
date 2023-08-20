@@ -27,7 +27,7 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.0.0"
 
-  name = "education-vpc"
+  name = "eks-vpc"
 
   cidr = "10.0.0.0/16"
   azs  = slice(data.aws_availability_zones.available.names, 0, 3)
@@ -73,8 +73,8 @@ module "eks" {
       instance_types = ["t3.small"]
 
       min_size     = 1
-      max_size     = 3
-      desired_size = 2
+      max_size     = 1
+      desired_size = 1
     }
 
     two = {
@@ -83,7 +83,7 @@ module "eks" {
       instance_types = ["t3.small"]
 
       min_size     = 1
-      max_size     = 2
+      max_size     = 1
       desired_size = 1
     }
   }
