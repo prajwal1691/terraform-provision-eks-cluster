@@ -2,13 +2,6 @@
 # SPDX-License-Identifier: MPL-2.0
 
 terraform {
-
-  cloud {
-    workspaces {
-      name = "prajwal-eks"
-    }
-  }
-
   required_providers {
     aws = {
       source  = "hashicorp/aws"
